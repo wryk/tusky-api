@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "name": "tusky-api",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/server.js",
+  "scripts": {
+    "server": "babel-node ./lib/server.js",
+    "reader-es": "babel-node ./lib/reader-es.js",
+    "reader-ws": "babel-node ./lib/reader-ws.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "aedes": "^0.26.0",
+    "aedes-persistence": "^3.1.0",
+    "eventsource": "^1.0.1",
+    "mqemitter": "^2.0.3",
+    "websocket-stream": "^4.0.0",
+    "ws": "^2.3.1",
+    "yargs": "^8.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
