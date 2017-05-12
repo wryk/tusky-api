@@ -4,5 +4,6 @@
     "instanceUrl": { "type": "string" },
     "accessToken": { "type": "string" },
     "deviceToken": { "type": "string" }
-  }
+  },
+  "required": ["instanceUrl", "accessToken", "deviceToken"]
 }

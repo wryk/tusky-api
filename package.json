@@ -21,6 +21,8 @@
     "js-data-sql": "^1.0.0-beta.3",
     "knex": "^0.13.0",
     "koa": "^2.2.0",
+    "koa-compose": "^4.0.0",
+    "koa-json-body": "^5.3.0",
     "koa-router": "^7.1.1",
     "mqemitter": "^2.0.3",
     "sqlite3": "^3.1.8",
