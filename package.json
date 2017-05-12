@@ -8,6 +8,7 @@
     "server": "babel-node ./lib/server.js",
     "reader-es": "babel-node ./lib/reader-es.js",
     "reader-ws": "babel-node ./lib/reader-ws.js",
+    "test-store": "babel-node ./lib/store.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -16,7 +17,13 @@
     "aedes": "^0.26.0",
     "aedes-persistence": "^3.1.0",
     "eventsource": "^1.0.1",
+    "js-data": "^3.0.0-rc.9",
+    "js-data-sql": "^1.0.0-beta.3",
+    "knex": "^0.13.0",
+    "koa": "^2.2.0",
+    "koa-router": "^7.1.1",
     "mqemitter": "^2.0.3",
+    "sqlite3": "^3.1.8",
     "websocket-stream": "^4.0.0",
     "ws": "^2.3.1",
     "yargs": "^8.0.1"

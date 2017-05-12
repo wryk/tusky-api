@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "instanceUrl": { "type": "string" },
+    "accessToken": { "type": "string" },
+    "deviceToken": { "type": "string" }
+  }
+}

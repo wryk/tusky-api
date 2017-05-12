@@ -4,17 +4,33 @@ WIP prototype nodejs implementation of the next mqtt based tusky push notificati
 
 you can use npm script options with `npm run command -- --option value`
 
-## MQTT server
+## Running
 ```sh
-npm run server
+npm run server -- --api-port 8080 --mqtt-port 1883 --mqtt-websocket-port 8000
 ```
 
-### EventSource reader
+## REST API
+* `POST /` create session
+* `DELETE /` delete session
+
+## Stream reader
+Usefull resources :
+* mastodon streaming api documentation : https://github.com/tootsuite/documentation/blob/master/Using-the-API/Streaming-API.md
+* mastodon access token generator : https://takahashim.github.io/mastodon-access-token/
+
+SSE servers:
+* demo : https://sse.now.sh
+* mastodon : https://mastodon.social/api/v1/streaming?stream=user&accessToken=token
+
+
+### EventSource
 ```sh
-npm run reader-es
+# test EventSource reader with a demo SSE server
+npm run reader-es -- --url https://sse.now.sh
 ```
 
-### WebSocket reader
+### WebSocket
 ```sh
-npm run reader-ws
+# test WebSocket reader with a demo SSE server
+npm run reader-ws -- --url https://sse.now.sh
 ```
