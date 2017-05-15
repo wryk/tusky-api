@@ -6,9 +6,6 @@
   "main": "lib/server.js",
   "scripts": {
     "server": "babel-node ./lib/server.js",
-    "reader-es": "babel-node ./lib/reader-es.js",
-    "reader-ws": "babel-node ./lib/reader-ws.js",
-    "test-store": "babel-node ./lib/store.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -16,7 +13,6 @@
   "dependencies": {
     "aedes": "^0.26.0",
     "aedes-persistence-redis": "^3.0.1",
-    "eventsource": "^1.0.1",
     "js-data": "^3.0.0-rc.9",
     "js-data-redis": "^3.0.0-beta.2",
     "koa": "^2.2.0",
@@ -26,8 +22,7 @@
     "mqemitter-redis": "^2.1.0",
     "redis": "^2.7.1",
     "websocket-stream": "^4.0.0",
-    "ws": "^2.3.1",
-    "yargs": "^8.0.1"
+    "ws": "^2.3.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
