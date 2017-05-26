@@ -19,8 +19,7 @@ export const builder = {
 
 export function handler ({ instanceUrl, accessToken, endpoint }) {
   const url = `wss://${instanceUrl}/api/v1/streaming?stream=${endpoint}&access_token=${accessToken}`
-
-  console.log(`${url}`)
+  console.log({ url })
 
   const ws = new WebSocket(url)
 

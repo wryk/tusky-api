@@ -15,12 +15,11 @@ export function handler ({ instanceUrl, accessToken, endpoint }) {
   // Mastodon SSE streaming doesn't allow access token in query parameters until https://github.com/tootsuite/mastodon/pull/3208
   // Used EventSource implementation allow custom headers while native EventSource implementation doesn't allow it and so can't use Mastodon SSE streaming API
   // Authorization header is used instead of query parameter for comptability with oldest Mastodon instances
-  const url = `wss://${instanceUrl}/api/v1/streaming?stream=${endpoint}&access_token=${accessToken}`
+  const url = `https://${instanceUrl}/api/v1/streaming/${endpoint}`
   const headers = { 'Authorization': `Bearer ${accessToken}` }
+  console.log({ url, headers })
 
-  console.log(`${url} with ${headers}`)
-
-  const es = new EventSource(`https://${instanceUrl}/api/v1/streaming/${endpoint}`, { headers })
+  const es = new EventSource(url, { headers })
 
   es.on('open', handleOpen)
   es.on('error', handleError)
