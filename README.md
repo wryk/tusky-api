@@ -20,13 +20,13 @@ Client ID need to be the deviceToken used when registration with the web service
 Without a registered deviceToken, authentication will be rejected.
 Authenticated clients can only access their "INSTANCE_URL/ACCESS_TOKEN/#" topic.
 
-## Stream reader
-Usefull resources :
-* Mastodon streaming api documentation (outdated or lmao) : https://github.com/tootsuite/documentation/blob/master/Using-the-API/Streaming-API.md
-* Mastodon access token generator : https://takahashim.github.io/mastodon-access-token/
+## Experiments
+Resources about Mastodon streaming API :
+* SSE streaming API documentation : https://github.com/tootsuite/documentation/blob/master/Using-the-API/Streaming-API.md
+* access token generator : https://takahashim.github.io/mastodon-access-token/
+* Streaming API (SSE and WS) implementation : https://github.com/tootsuite/mastodon/blob/master/streaming/index.js
 
-## TODO
-* [ ] cleanup codebase
-* [ ] use secure protocols (https and tls)
-* [ ] add testing suite
-* [ ] replace ws by a more lightweigth web socket implementation (uws ?)
+### Listener
+```sh
+npm run listener -- <sse|ws> INSTANCE_URL ACCESS_TOKEN [--endpoint=<user|public>]
+```
