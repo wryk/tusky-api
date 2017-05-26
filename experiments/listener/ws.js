@@ -18,14 +18,50 @@ export const builder = {
 }
 
 export function handler ({ instanceUrl, accessToken, endpoint }) {
-  const ws = new WebSocket(`ws://${instanceUrl}/api/v1/streaming?stream=${endpoint}?access_token=${accessToken}`)
+  const url = `wss://${instanceUrl}/api/v1/streaming?stream=${endpoint}&access_token=${accessToken}`
 
-  ws.on('open', () => console.log('open'))
-  ws.on('headers', (headers, response) => console.log('headers', { headers, response }))
-  ws.on('message', data => console.log('message', { data }))
-  ws.on('unexpected-response', (request, response) => console.log('message', { request, response }))
-  ws.on('ping', data => console.log('ping', { data }))
-  ws.on('pong', data => console.log('pong', { data }))
-  ws.on('error', error => console.log('error', { error }))
-  ws.on('close', (code, reason) => console.log('close', { code, reason }))
+  console.log(`${url}`)
+
+  const ws = new WebSocket(url)
+
+  ws.on('open', handleOpen)
+  ws.on('headers', handleHeaders)
+  ws.on('message', handleMessage)
+  ws.on('unexpected-response', handleUnexpectedResponse)
+  ws.on('ping', handlePing)
+  ws.on('pong', handlePong)
+  ws.on('error', handleError)
+  ws.on('close', handleClose)
+
+  function handleOpen () {
+    console.log('open')
+  }
+
+  function handleHeaders (headers, response) {
+    console.log('headers', headers, response)
+  }
+
+  function handleMessage (data) {
+    console.log('message', data)
+  }
+
+  function handleUnexpectedResponse (request, response) {
+    console.log('unexpected-response', request, response)
+  }
+
+  function handlePing (data) {
+    console.log('ping', data)
+  }
+
+  function handlePong (data) {
+    console.log('pong', data)
+  }
+
+  function handleError (error) {
+    console.log('error', error)
+  }
+
+  function handleClose (code, reason) {
+    console.log('close', { code, reason })
+  }
 }
