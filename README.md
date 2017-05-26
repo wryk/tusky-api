@@ -3,7 +3,8 @@
 WIP prototype nodejs implementation of the next mqtt based tusky push notification api
 
 ## Running
-Redis is required for session storage, and broker emitter/persistence.
+* Redis is required for session storage, and broker emitter/persistence.
+* tusky-api optionally supports [uWebSockets/uWebSockets](https://github.com/uNetworking/uWebSockets) when available (`npm install uws` to use it) and fallback to [websockets/ws](https://github.com/websockets/ws).
 
 ```sh
 npm run server
@@ -18,7 +19,7 @@ npm run server
 ### MQTT Broker
 Client ID need to be the deviceToken used when registration with the web service.
 Without a registered deviceToken, authentication will be rejected.
-Authenticated clients can only access their "INSTANCE_URL/ACCESS_TOKEN/#" topic.
+Authenticated clients can only access their `INSTANCE_URL/ACCESS_TOKEN/#` topic.
 
 ## Experiments
 Resources about Mastodon streaming API :
@@ -30,3 +31,5 @@ Resources about Mastodon streaming API :
 ```sh
 npm run listener -- <sse|ws> INSTANCE_URL ACCESS_TOKEN [--endpoint=<user|public>]
 ```
+
+TODO: test listeners implementations against special use case (redirection etc)
